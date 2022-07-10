@@ -26,7 +26,8 @@ const readInput = () => {
 //Creates List Element, nest P element and add the input text
 
 const createListElement = (inputTaskFieldValue) => {
-    const li = document.createElement("li");
+  
+     const li = document.createElement("li");
     const p = document.createElement("p");
 
     p.innerHTML= inputTaskFieldValue;
@@ -44,7 +45,7 @@ const createListElement = (inputTaskFieldValue) => {
 const appendBtn = (listItem) => {
     //Creates Button
     let btn = document.createElement("input");
-    
+
     btn.setAttribute("type", "button");
     btn.setAttribute("id", "task-submit");
     btn.setAttribute("value", "✔️")
@@ -57,3 +58,12 @@ const appendBtn = (listItem) => {
 
 
 readInput();
+
+/*
+
+    <li>
+       <p>Task 1</p>
+           <input type="submit"   class="button" id="task-submit" value="✔️">
+       </li>
+
+*/
