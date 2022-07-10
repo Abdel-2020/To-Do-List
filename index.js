@@ -48,7 +48,7 @@ const appendBtn = (listItem) => {
 
     btn.setAttribute("type", "button");
     btn.setAttribute("id", "task-submit");
-    btn.setAttribute("value", "✔️")
+    btn.setAttribute("value", "✔️");
     btn.classList.add("button");
 
 
