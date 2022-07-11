@@ -10,7 +10,7 @@ let taskList = document.querySelector(".task-list");
 
 
 
-//Grabs text from input field and returns the value. 
+//Grabs text from input field and reeeturns the value. 
 const readInput = () => {
     //Event listener waits for a click on the inputSubmitButton
     inputSubmitBtn.addEventListener("click", () => {
