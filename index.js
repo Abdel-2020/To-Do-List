@@ -1,4 +1,3 @@
-
 // 1st store the input field into a variable. 
 let inputTaskField = document.getElementById("todo-input");
 
@@ -10,14 +9,24 @@ let taskList = document.querySelector(".task-list");
 
 
 
-//Grabs text from input field and reeeturns the value. 
+//Grabs text from input field and returns the value. 
 const readInput = () => {
     //Event listener waits for a click on the inputSubmitButton
     inputSubmitBtn.addEventListener("click", () => {
         //logs to console to test if it the click functionality works
         console.log(`${inputTaskField.value}`);
+
+        //Validation to check if a value has been entered. 
+        if (inputTaskField.value === "") {
+            alert("Please enter a task.");
+        } else {
+            createListElement(inputTaskField.value);
+        }
+
+
+
         //Runs the createListElement function, passing the value of what was typed in the inputTaskField.
-        createListElement(inputTaskField.value);
+
     })
 }
 
@@ -28,11 +37,11 @@ const readInput = () => {
 //Creates List Element, nest P element and add the input text
 
 const createListElement = (inputTaskFieldValue) => {
-  
+
     //Creates the li element. 
-     const li = document.createElement("li");
+    const li = document.createElement("li");
     //Creates the p element.
-     const p = document.createElement("p");
+    const p = document.createElement("p");
     //Stores the value passed from readInput() inside the p element. 
     p.innerHTML = inputTaskFieldValue;
     //Nests the p element inside the li element.

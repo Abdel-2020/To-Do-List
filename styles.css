@@ -89,6 +89,7 @@ li {
     border: none;
     font-size: 2em;
     cursor: pointer;
-
+    height: 50px;
+    margin-top: -20px;
 }
 
