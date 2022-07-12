@@ -7,9 +7,13 @@ let inputSubmitBtn = document.getElementById("todo-submit");
 //Store the Task List into a variable
 let taskList = document.querySelector(".task-list");
 
+//Store the task Submit button into a variable
+
+//--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-//Grabs text from input field and returns the value. 
+//Read input function----------------------------------------------------------------------------------------------------------------------------------------------------------
+//Grabs text from input field and returns the value.  
 const readInput = () => {
     //Event listener waits for a click on the inputSubmitButton
     inputSubmitBtn.addEventListener("click", () => {
@@ -20,22 +24,16 @@ const readInput = () => {
         if (inputTaskField.value === "") {
             alert("Please enter a task.");
         } else {
+            //Runs the createListElement function, passing the value of what was typed in the inputTaskField.
             createListElement(inputTaskField.value);
         }
-
-
-
-        //Runs the createListElement function, passing the value of what was typed in the inputTaskField.
-
     })
 }
+//End of Read input function----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
-
-
+//Create List Element function//Read input function----------------------------------------------------------------------------------------------------------------------------------
 //Creates List Element, nest P element and add the input text
-
 const createListElement = (inputTaskFieldValue) => {
 
     //Creates the li element. 
@@ -53,10 +51,9 @@ const createListElement = (inputTaskFieldValue) => {
 
 
 }
+//End of Create List Element function//Read input function------------------------------------------------------------------------------------------------------------------------
 
-
-//Append button 
-
+//Append button  Function----------------------------------------------------------------------------------------------------------------------------------------------------------
 const appendBtn = (listItem) => {
     //Creates Button
     let btn = document.createElement("input");
@@ -71,6 +68,47 @@ const appendBtn = (listItem) => {
     //Append Button
     listItem.appendChild(btn);
 }
+//End of Append button  Function----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//Task Submit function-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*
+const taskSubmit = () => {
+
+    //Read if the tick button has been pressed. 
+    taskSubmitBtn.addEventListener("click", () => {
+        taskSubmitBtn.parentNode
+
+
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 readInput();
