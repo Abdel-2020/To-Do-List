@@ -1,3 +1,7 @@
+//Store the Task List into a variable
+let taskList = document.querySelector(".task-list");
+
+
 //Read input function----------------------------------------------------------------------------------------------------------------------------------------------------------
 //Grabs text from input field and returns the value.  
 const readInput = () => {
@@ -24,11 +28,11 @@ const readInput = () => {
 //End of Read input function----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+readInput();
+
 //Create List Element function//Read input function----------------------------------------------------------------------------------------------------------------------------------
 //Creates List Element, nest P element and add the input text
 const createListElement = (inputTaskFieldValue) => {
-//Store the Task List into a variable
-let taskList = document.querySelector(".task-list");
 
     //Creates the li element. 
     const li = document.createElement("li");
@@ -42,6 +46,8 @@ let taskList = document.querySelector(".task-list");
     //Calls the appendBtn() function to nest a button element into the li Element.
     appendBtn(li);
     taskList.appendChild(li);
+
+    taskSubmit();
 
 
 }
@@ -71,51 +77,35 @@ const appendBtn = (listItem) => {
 
 
 
-//Read if the tick button has been pressed. 
+// MAIN GOAL Read if the tick button has been pressed. 
+//Obtain an array of all items withn the <ul>List 
+//Iterate though the array to check which button has been clicked.
+//Remove the list item in question,.
+const taskSubmit = () => {
+
+    //Obtain a list of all the items in the UL. 
+    let listArray = taskList.childNodes;
+       
+    
+    for(let i=0; i < listArray.length; i++){
+        
+            taskList.childNodes[i].querySelector(".button").addEventListener("click", () => {
+                console.log("CLICKED");
+            })
+            
+        }
+ 
+}
+
 
 
 
 
 /*
-const taskSubmit = () => {
 
-    //Read if the tick button has been pressed. 
-    taskSubmitBtn.addEventListener("click", () => {
-        taskSubmitBtn.parentNode
-
-
-    })
-}
 
     
 
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-readInput();
 
 /*
 
@@ -125,3 +115,5 @@ readInput();
        </li>
 
 */
+
+
