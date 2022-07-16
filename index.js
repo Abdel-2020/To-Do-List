@@ -47,7 +47,7 @@ const createListElement = (inputTaskFieldValue) => {
     appendBtn(li);
     taskList.appendChild(li);
 
-    taskSubmit();
+    createListArray();
 
 
 }
@@ -81,24 +81,24 @@ const appendBtn = (listItem) => {
 //Obtain an array of all items withn the <ul>List 
 //Iterate though the array to check which button has been clicked.
 //Remove the list item in question,.
-const taskSubmit = () => {
+const createListArray = () => {
 
     //Obtain a list of all the items in the UL. 
-    let listArray = taskList.childNodes;
-       
-    
-    for(let i=0; i < listArray.length; i++){
-        
-            taskList.childNodes[i].querySelector(".button").addEventListener("click", () => {
-                console.log("CLICKED");
-            })
-            
-        }
+    return taskList.children;
  
 }
 
 
+const  checkTickClick  =  (listArray) => {
 
+    for (let i = 1; i <listArray.length; i++){
+        console.log("HELLO " + listArray[i]);
+    }
+
+}
+
+
+checkTickClick(createListArray);
 
 
 /*
