@@ -1,4 +1,3 @@
-
 //Read input function
 //Grabs text from input field and returns the value.  
 const readInput = () => {
@@ -53,7 +52,7 @@ const createListElement = (inputTaskFieldValue) => {
     let taskList = document.querySelector(".task-list");
     //Creates the li element. 
     const li = document.createElement("li");
-    li.setAttribute =("class", "task");
+    li.setAttribute = ("class", "task");
     //Creates the p element.
     const p = document.createElement("p");
 
@@ -66,7 +65,7 @@ const createListElement = (inputTaskFieldValue) => {
 
     //Calls the appendBtn() function to nest a button element into the li Element.
     appendBtn(li);
-    
+
     //Appends the list item to the UL parent element. 
     taskList.appendChild(li);
     taskCompleted();
@@ -84,9 +83,9 @@ const taskCompleted = () => {
 
     let buttonList = document.querySelectorAll(".button");
 
-    for (let i = 0; i < buttonList.length; i++){
+    for (let i = 0; i < buttonList.length; i++) {
 
-        buttonList[i].addEventListener("click", () =>{
+        buttonList[i].addEventListener("click", () => {
             buttonList[i].parentElement.style.display = "none";
         });
     }
@@ -96,4 +95,3 @@ const taskCompleted = () => {
 
 
 readInput();
-
