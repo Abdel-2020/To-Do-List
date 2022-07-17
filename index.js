@@ -1,6 +1,3 @@
-//Store the Task List into a variable
-let taskList = document.querySelector(".task-list");
-
 
 //Read input function----------------------------------------------------------------------------------------------------------------------------------------------------------
 //Grabs text from input field and returns the value.  
@@ -28,30 +25,8 @@ const readInput = () => {
 //End of Read input function----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-readInput();
-
-//Create List Element function//Read input function----------------------------------------------------------------------------------------------------------------------------------
-//Creates List Element, nest P element and add the input text
-const createListElement = (inputTaskFieldValue) => {
-
-    //Creates the li element. 
-    const li = document.createElement("li");
-    //Creates the p element.
-    const p = document.createElement("p");
-    //Stores the value passed from readInput() inside the p element. 
-    p.innerHTML = inputTaskFieldValue;
-    //Nests the p element inside the li element.
-    li.appendChild(p);
-
-    //Calls the appendBtn() function to nest a button element into the li Element.
-    appendBtn(li);
-    taskList.appendChild(li);
-
-    createListArray();
 
 
-}
-//End of Create List Element function//Read input function------------------------------------------------------------------------------------------------------------------------
 
 //Append button  Function----------------------------------------------------------------------------------------------------------------------------------------------------------
 const appendBtn = (listItem) => {
@@ -67,10 +42,36 @@ const appendBtn = (listItem) => {
 
     //Append Button
     listItem.appendChild(btn);
-
-
 }
 //End of Append button  Function----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+//Create List Element function//Read input function----------------------------------------------------------------------------------------------------------------------------------
+//Creates List Element, nest P element and add the input text
+const createListElement = (inputTaskFieldValue) => {
+    //Selects the UL element 
+    let taskList = document.querySelector(".task-list");
+    //Creates the li element. 
+    const li = document.createElement("li");
+    li.setAttribute =("class", "task");
+    //Creates the p element.
+    const p = document.createElement("p");
+
+
+
+    //Stores the value passed from readInput() inside the p element. 
+    p.innerHTML = inputTaskFieldValue;
+    //Nests the p element inside the li element.
+    li.appendChild(p);
+
+    //Calls the appendBtn() function to nest a button element into the li Element.
+    appendBtn(li);
+    
+    //Appends the list item to the UL parent element. 
+    taskList.appendChild(li);
+    taskCompleted();
+}
+//End of Create List Element function//Read input function------------------------------------------------------------------------------------------------------------------------
 
 
 //Task Submit function-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -78,27 +79,55 @@ const appendBtn = (listItem) => {
 
 
 // MAIN GOAL Read if the tick button has been pressed. 
+
 //Obtain an array of all items withn the <ul>List 
+
 //Iterate though the array to check which button has been clicked.
 //Remove the list item in question,.
-const createListArray = () => {
 
-    //Obtain a list of all the items in the UL. 
-    return taskList.children;
- 
-}
+const taskCompleted = () => {
 
+    let buttonList = document.querySelectorAll(".button");
 
-const  checkTickClick  =  (listArray) => {
+    for (let i = 0; i < buttonList.length; i++){
 
-    for (let i = 1; i <listArray.length; i++){
-        console.log("HELLO " + listArray[i]);
+        buttonList[i].addEventListener("click", () =>{
+            buttonList[i].parentElement.style.display = "none";
+        });
     }
 
 }
 
 
-checkTickClick(createListArray);
+
+readInput();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
