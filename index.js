@@ -1,5 +1,5 @@
 
-//Read input function----------------------------------------------------------------------------------------------------------------------------------------------------------
+//Read input function
 //Grabs text from input field and returns the value.  
 const readInput = () => {
     // 1st store the input field into a variable. 
@@ -22,13 +22,13 @@ const readInput = () => {
         }
     })
 }
-//End of Read input function----------------------------------------------------------------------------------------------------------------------------------------------------------
+//End of Read input function
 
 
 
 
 
-//Append button  Function----------------------------------------------------------------------------------------------------------------------------------------------------------
+//Append button  Function
 const appendBtn = (listItem) => {
     //Creates Button
     let btn = document.createElement("button");
@@ -43,10 +43,10 @@ const appendBtn = (listItem) => {
     //Append Button
     listItem.appendChild(btn);
 }
-//End of Append button  Function----------------------------------------------------------------------------------------------------------------------------------------------------------
+//End of Append button  Function
 
 
-//Create List Element function//Read input function----------------------------------------------------------------------------------------------------------------------------------
+//Create List Element function
 //Creates List Element, nest P element and add the input text
 const createListElement = (inputTaskFieldValue) => {
     //Selects the UL element 
@@ -71,19 +71,15 @@ const createListElement = (inputTaskFieldValue) => {
     taskList.appendChild(li);
     taskCompleted();
 }
-//End of Create List Element function//Read input function------------------------------------------------------------------------------------------------------------------------
+//End of Create List Element function
 
 
-//Task Submit function-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-
-
-// MAIN GOAL Read if the tick button has been pressed. 
-
-//Obtain an array of all items withn the <ul>List 
-
-//Iterate though the array to check which button has been clicked.
-//Remove the list item
+/*Task Submit function
+MAIN GOAL Read if the tick button has been pressed. 
+First group all buttons in an array
+Iterate though the array to check which button has been clicked.
+Remove the list item
+*/
 const taskCompleted = () => {
 
     let buttonList = document.querySelectorAll(".button");
@@ -100,48 +96,4 @@ const taskCompleted = () => {
 
 
 readInput();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-    
-
-
-/*
-
-    <li>
-       <p>Task 1</p>
-           <input type="submit"   class="button" id="task-submit" value="✔️">
-       </li>
-
-*/
-
 
