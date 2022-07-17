@@ -83,8 +83,7 @@ const createListElement = (inputTaskFieldValue) => {
 //Obtain an array of all items withn the <ul>List 
 
 //Iterate though the array to check which button has been clicked.
-//Remove the list item in question,.
-
+//Remove the list item
 const taskCompleted = () => {
 
     let buttonList = document.querySelectorAll(".button");
