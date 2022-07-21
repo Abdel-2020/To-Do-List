@@ -1,10 +1,34 @@
 //Read input function
 //Grabs text from input field and returns the value.  
+
+
+
+
+
+
+
+
+
 const readInput = () => {
     // 1st store the input field into a variable. 
     let inputTaskField = document.getElementById("todo-input");
     //Store the input button into a variable. 
     let inputSubmitBtn = document.getElementById("todo-submit");
+
+
+
+// Execute a function when the user presses a key on the keyboard
+inputTaskField.addEventListener("keypress", (event) => {
+    // If the user presses the "Enter" key on the keyboard
+    if (event.key === "Enter") {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Trigger the button element with a click
+      inputSubmitBtn.click();
+    }
+  }); 
+
+
 
     //Event listener waits for a click on the inputSubmitButton
     inputSubmitBtn.addEventListener("click", () => {
@@ -17,7 +41,7 @@ const readInput = () => {
         } else {
             //Runs the createListElement function, passing the value of what was typed in the inputTaskField.
             createListElement(inputTaskField.value);
-
+            inputTaskField.value="";
         }
     })
 }
@@ -68,6 +92,8 @@ const createListElement = (inputTaskFieldValue) => {
 
     //Appends the list item to the UL parent element. 
     taskList.appendChild(li);
+
+    //After the list is built, the taskCompleted function waits to be used when someone ticks off  a task.
     taskCompleted();
 }
 //End of Create List Element function
